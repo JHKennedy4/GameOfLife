@@ -1,6 +1,6 @@
-TESTS = $(shell find test -name "*.test.js")
+TESTS = $(shell find . -name "*.test.js")
 test:
-		mocha --timeout 5000 --reporter nyan gol.test.js
+		mocha --timeout 5000 --reporter nyan $(TESTS)
 
 report:
 		istanbul cover _mocha --R $(TESTS)
